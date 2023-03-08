@@ -1,9 +1,11 @@
+#ifndef PIXEL_H
+#define PIXEL_Y
+
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <random>
 #include <ctime>
-
 
 class Pixel {
     int r;
@@ -11,7 +13,7 @@ class Pixel {
     int b;
     public:
         // Constructors
-        Pixel() : r(0), g(0), b(0) {}
+        Pixel() {}
         Pixel(int r, int g, int b) : r(r), g(g), b(b) {}
 
         // Big three
@@ -28,6 +30,12 @@ class Pixel {
         void setRandomColor();
 
 };
+
+Pixel::Pixel() {
+    this->r = 0;
+    this->g = 0;
+    this->b = 0;
+}
 
 void Pixel::copy(const Pixel& rhs) {
     this->r = rhs.r;
@@ -68,3 +76,5 @@ void Pixel::setRandomColor() {
     this->g =random() % 255;
     this->b = random() % 255;
 }
+
+#endif
